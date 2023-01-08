@@ -9,11 +9,6 @@ Web based Business Organizer/Planner System (2018) and mobile(apache cordova).
   title="home"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
   
-<img
-  src="Images from system/index.png"
-  alt="Alt home"
-  title="home"
-  style="display: inline-block; margin: 0 auto; max-width: 300px">
   
   <img
   src="Images from system/admin_view.png"
@@ -35,12 +30,12 @@ Web based Business Organizer/Planner System (2018) and mobile(apache cordova).
   
     <img
   src="Images from system/trabajo_template.png"
-  alt="Alt 4"
+  alt="Alt 5"
   title="home"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
   
   <img
   src="Images from system/chat.png"
-  alt="Alt 4"
+  alt="Alt 6"
   title="home"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
