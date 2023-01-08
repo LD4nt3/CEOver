@@ -1,7 +1,7 @@
 # CEOver
-Sistema web Organizador/Planificador Empresarial (2018) y movil.
+Sistema web Organizador/Planificador Empresarial (2018) y versión móvil.
 
-Web based Business Organizer/Planner System (2018) and mobile(apache cordova).
+Web based Business Organizer/Planner System (2018) and mobile(apache cordova) version.
 
 <img
   src="Images from system/index.png"
