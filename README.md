@@ -17,13 +17,13 @@ Web based Business Organizer/Planner System (2018) and mobile(apache cordova).
   style="display: inline-block; margin: 0 auto; max-width: 300px">
   
   <img
-  src="Images from system/graficas_e.png"
+  src="Images from system/graficas-e.png"
   alt="Alt 3"
   title="home"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
   
   <img
-  src="Images from system/company_procedures.png"
+  src="Images from system/Company_procedures.png"
   alt="Alt 4"
   title="home"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
