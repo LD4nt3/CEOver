@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+  <title>Bienvenido</title>
+  <style type="text/css">
+  @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+fieldset, label { margin: 0; padding: 0; }
+body{ margin: 20px; }
+h1 { font-size: 1.5em; margin: 10px; }
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+div.b {
+    text-align: left;
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+footer {
+  background-color: rgb(238, 238, 238);
+  position:fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  color: black;
+}
+hr2 { 
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 5em;
+    margin-right: 5em;
+    border-style: inset;
+    border-width: 2px;
+}
+      .center {
+    text-align: center;
+}
+ 
+.fixed {
+ 
+ margin: -500px 10px 10px 599px; 
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+margin-left: 90px;
+margin-right: 90px;
+  padding: 0.1px;
+}
+.grid-item {
+
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+.centable {   margin: 25px 50px 75px 100px; }
+</style>
+  <script>
+  $(function() {
+
+      $.ajax({
+   url: 'red.php',
+   success: function (response) {//response is value returned from php (for your example it's "bye bye"
+    if(response==0){window.location = "http://ceover.com/home.html";}
+    console.log(response);
+   }
+}); 
+
+      
+  });
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script type="text/javascript">
+  $( document ).ready(function() {
+                 var trab = localStorage.getItem('pipa');
+if(trab==0)
+{
+       alert("No ha selecionado ningun trabajo!");
+                 window.location="http://ceover.com/trabajos_generales_encargado.html";
+}
+    $.ajax({
+    url: 'calificar_es.php'
+                                      
+         }).done(function(response) {
+         $("#mySelect").append(response);
+
+    });
+});
+</script>
+</head>
+<body background="https://www.beautycolorcode.com/8ed8e8.png" style="cursor: auto;">
+<div style="background:#eee;border:1px solid #ccc;padding:5px 10px;">
+<p style="text-align:center"><img alt="" height="118" src="https://cdn.discordapp.com/attachments/448707323125432320/499437628802727955/ohhh3.png" width="1184" /></p>
+</div>
+
+<nav class='navbar navbar-inverse'>
+  <div class='container-fluid'>
+    <div class='navbar-header'>
+      <a class='navbar-brand' href='#'>Ceover</a>
+    </div>
+    <ul class='nav navbar-nav'>
+     
+  <li><a href='trabajos_generales_encargado.html' >  &nbsp;Regresar&nbsp;&nbsp;&nbsp;  </a></li>
+
+ <li><a href='salir.php' > &nbsp;Salir  </a></li>
+ 
+
+    </ul>
+
+  </div>
+</nav>
+<footer>
+<p style="text-align: right;"><a href="https://img.youtube.com/vi/_ESprkRgmjU/mqdefault.jpg">Aviso legal</a>&nbsp;&nbsp;|<a href="https://img.youtube.com/vi/_ESprkRgmjU/mqdefault.jpg">&nbsp;Terminos y condiciones&nbsp;<br />
+<img alt="mail" height="23" src="http://iblogbox.github.io/js/htmleditor/ckeditor-4.4.7/plugins/smiley/images/envelope.png" title="mail" width="23" /></a>ploisla8989@gmail.com</p>
+</footer>
+
+<p style="text-align: center;"><span style="font-size:24px;"><b>&iexcl;Califica el&nbsp;trabajo!&nbsp;</b></span></p>
+<hr2></hr2>
+
+<div class="grid-container">
+<div class="grid-item">
+    <div id="hi">
+<table class="centable" style="width:30%">
+  <tr><td>
+<fieldset class='rating' id='f1' name='Calidad de trabajo'>
+<p>Calidad de trabajo&nbsp;</p>
+    <input type='radio' class='rat' name='1' id='star5_1'  value='5' /><label class = 'full' for='star5_1' title='Awesome - 5 stars'></label>
+    <input type='radio' class='rat' name='1' id='star4half_1'  value='4.5' /><label class='half' for='star4half_1' title='Pretty good - 4.5 stars'></label>
+    <input type='radio' class='rat' name='1' id='star4_1'  value='4' /><label class = 'full' for='star4_1' title='Pretty good - 4 stars'></label>
+    <input type='radio' class='rat' name='1' id='star3half_1'  value='3.5' /><label class='half' for='star3half_1' title='Meh - 3.5 stars'></label>
+    <input type='radio' class='rat' name='1' id='star3_1'  value='3' /><label class = 'full' for='star3_1' title='Meh - 3 stars'></label>
+    <input type='radio' class='rat' name='1' id='star2half_1'  value='2.5' /><label class='half' for='star2half_1' title='Kinda bad - 2.5 stars'></label>
+    <input type='radio' class='rat' name='1' id='star2_1'  value='2' /><label class = 'full' for='star2_1' title='Kinda bad - 2 stars'></label>
+    <input type='radio' class='rat' name='1' id='star1half_1'  value='1.5' /><label class='half' for='star1half_1' title='Meh - 1.5 stars'></label>
+    <input type='radio' class='rat' name='1' id='star1_1'  value='1' /><label class = 'full' for='star1_1' title='Sucks big time - 1 star'></label>
+    <input type='radio' class='rat' name='1' id='starhalf_1'  value='.5' /><label class='half' for='starhalf_1' title='Sucks big time - 0.5 stars'></label>
+ 
+</fieldset></td>
+  <td> <span class="glyphicon glyphicon-remove" id='1_' pk='1' name='f1' onclick="selectbox(this)" style="color: #D00909;"></span>
+</td></tr>
+  <tr><td>  
+
+
+<fieldset class='rating' id='f2' name='Disposición del empleado al realizarlo'>
+<p>Disposición del empleado al realizarlo</p>
+    <input type='radio' class='rat' name='2' id='star5_2'  value='5' /><label class = 'full' for='star5_2' title='Awesome - 5 stars'></label>
+    <input type='radio' class='rat' name='2' id='star4half_2'  value='4.5' /><label class='half' for='star4half_2' title='Pretty good - 4.5 stars'></label>
+    <input type='radio' class='rat' name='2' id='star4_2'  value='4' /><label class = 'full' for='star4_2' title='Pretty good - 4 stars'></label>
+    <input type='radio' class='rat' name='2' id='star3half_2'  value='3.5' /><label class='half' for='star3half_2' title='Meh - 3.5 stars'></label>
+    <input type='radio' class='rat' name='2' id='star3_2'  value='3' /><label class = 'full' for='star3_2' title='Meh - 3 stars'></label>
+    <input type='radio' class='rat' name='2' id='star2half_2'  value='2.5' /><label class='half' for='star2half_2' title='Kinda bad - 2.5 stars'></label>
+    <input type='radio' class='rat' name='2' id='star2_2'  value='2' /><label class = 'full' for='star2_2' title='Kinda bad - 2 stars'></label>
+    <input type='radio' class='rat' name='2' id='star1half_2'  value='1.5' /><label class='half' for='star1half_2' title='Meh - 1.5 stars'></label>
+    <input type='radio' class='rat' name='2' id='star1_2'  value='1' /><label class = 'full' for='star1_2' title='Sucks big time - 1 star'></label>
+    <input type='radio' class='rat' name='2' id='starhalf_2'  value='.5' /><label class='half' for='starhalf_2' title='Sucks big time - 0.5 stars'></label>
+</fieldset></td>
+<td>
+<span class="glyphicon glyphicon-remove" id='2_' pk='2' name='f2' onclick="selectbox(this)" style="color: #D00909;"></span>
+</td></tr>
+  <tr>
+<td>
+<fieldset class='rating' id='f3' name='Eficiencia del resultado'>
+<p>Eficiencia del resultado</p>
+    <input type='radio' class='rat' name='3' id='star5_3'  value='5' /><label class = 'full' for='star5_3' title='Awesome - 5 stars'></label>
+    <input type='radio' class='rat' name='3' id='star4half_3'  value='4.5' /><label class='half' for='star4half_3' title='Pretty good - 4.5 stars'></label>
+    <input type='radio' class='rat' name='3' id='star4_3'  value='4' /><label class = 'full' for='star4_3' title='Pretty good - 4 stars'></label>
+    <input type='radio' class='rat' name='3' id='star3half_3'  value='3.5' /><label class='half' for='star3half_3' title='Meh - 3.5 stars'></label>
+    <input type='radio' class='rat' name='3' id='star3_3'  value='3' /><label class = 'full' for='star3_3' title='Meh - 3 stars'></label>
+    <input type='radio' class='rat' name='3' id='star2half_3'  value='2.5' /><label class='half' for='star2half_3' title='Kinda bad - 2.5 stars'></label>
+    <input type='radio' class='rat' name='3' id='star2_3'  value='2' /><label class = 'full' for='star2_3' title='Kinda bad - 2 stars'></label>
+    <input type='radio' class='rat' name='3' id='star1half_3'  value='1.5' /><label class='half' for='star1half_3' title='Meh - 1.5 stars'></label>
+    <input type='radio' class='rat' name='3' id='star1_3'  value='1' /><label class = 'full' for='star1_3' title='Sucks big time - 1 star'></label>
+    <input type='radio' class='rat' name='3' id='starhalf_3'  value='.5' /><label class='half' for='starhalf_3' title='Sucks big time - 0.5 stars'></label>
+</fieldset></td>
+<td><span class="glyphicon glyphicon-remove" id='3_' pk='3' name='f3' onclick="selectbox(this)" style="color: #D00909;"></span>
+</td></tr>
+  <tr>
+
+<td>
+<fieldset class='rating' id='f4' name='Cooperación entre compa&ntilde;eros'>
+<p>Cooperación entre compa&ntilde;eros</p>
+    <input type='radio' class='rat' name='4' id='star5_4'  value='5' /><label class = 'full' for='star5_4' title='Awesome - 5 stars'></label>
+    <input type='radio' class='rat' name='4' id='star4half_4'  value='4.5' /><label class='half' for='star4half_4' title='Pretty good - 4.5 stars'></label>
+    <input type='radio' class='rat' name='4' id='star4_4'  value='4' /><label class = 'full' for='star4_4' title='Pretty good - 4 stars'></label>
+    <input type='radio' class='rat' name='4' id='star3half_4'  value='3.5' /><label class='half' for='star3half_4' title='Meh - 3.5 stars'></label>
+    <input type='radio' class='rat' name='4' id='star3_4'  value='3' /><label class = 'full' for='star3_4' title='Meh - 3 stars'></label>
+    <input type='radio' class='rat' name='4' id='star2half_4'  value='2.5' /><label class='half' for='star2half_4' title='Kinda bad - 2.5 stars'></label>
+    <input type='radio' class='rat' name='4' id='star2_4'  value='2' /><label class = 'full' for='star2_4' title='Kinda bad - 2 stars'></label>
+    <input type='radio' class='rat' name='4' id='star1half_4'  value='1.5' /><label class='half' for='star1half_4' title='Meh - 1.5 stars'></label>
+    <input type='radio' class='rat' name='4' id='star1_4'  value='1' /><label class = 'full' for='star1_4' title='Sucks big time - 1 star'></label>
+    <input type='radio' class='rat' name='4' id='starhalf_4'  value='.5' /><label class='half' for='starhalf_4' title='Sucks big time - 0.5 stars'></label>
+</fieldset></td>
+<td><span class="glyphicon glyphicon-remove" id='4_' pk='4' name='f4' onclick="selectbox(this)" style="color: #D00909;"></span>
+</td></tr>
+  <tr>
+ 
+<td>
+<fieldset class='rating' id='f5' name='Cumplimiento de reglas normas o estándares definidos'>
+<p>Cumplimiento de reglas normas o estándares definidos&nbsp;</p>
+    <input type='radio' class='rat' name='5' id='star5_5'  value='5' /><label class = 'full' for='star5_5' title='Awesome - 5 stars'></label>
+    <input type='radio' class='rat' name='5' id='star4half_5'  value='4.5' /><label class='half' for='star4half_5' title='Pretty good - 4.5 stars'></label>
+    <input type='radio' class='rat' name='5' id='star4_5'  value='4' /><label class = 'full' for='star4_5' title='Pretty good - 4 stars'></label>
+    <input type='radio' class='rat' name='5' id='star3half_5'  value='3.5' /><label class='half' for='star3half_5' title='Meh - 3.5 stars'></label>
+    <input type='radio' class='rat' name='5' id='star3_5'  value='3' /><label class = 'full' for='star3_5' title='Meh - 3 stars'></label>
+    <input type='radio' class='rat' name='5' id='star2half_5'  value='2.5' /><label class='half' for='star2half_5' title='Kinda bad - 2.5 stars'></label>
+    <input type='radio' class='rat' name='5' id='star2_5'  value='2' /><label class = 'full' for='star2_5' title='Kinda bad - 2 stars'></label>
+    <input type='radio' class='rat' name='5' id='star1half_5'  value='1.5' /><label class='half' for='star1half_5' title='Meh - 1.5 stars'></label>
+    <input type='radio' class='rat' name='5' id='star1_5'  value='1' /><label class = 'full' for='star1_5' title='Sucks big time - 1 star'></label>
+    <input type='radio' class='rat' name='5' id='starhalf_5'  value='.5' /><label class='half' for='starhalf_5' title='Sucks big time - 0.5 stars'></label>
+</fieldset></td>
+<td><span class="glyphicon glyphicon-remove" id='5_' pk='5' name='f5' onclick="selectbox(this)" style="color: #D00909;"></span>
+</td></tr></table> 
+<p style="text-align: center;">
+    <button id="submit"> Terminar edici&oacute;n </button></p></div>
+<p>&nbsp;</p>
+<div id="resul">
+  </div>  </div>
+<div class="grid-item">
+
+<select  id="mySelect" onchange="seleclick(this)">
+    <option >Selecione un punto:</option>
+  </select><br><br>
+  <p>&iexcl;O agregue uno! </p>
+
+  <button id="myButton"> Agregar </button>
+</div>
+</div>
+
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "agregar_punto.html";
+    };
+</script>
+
+<script>
+function selectbox(x) {
+var a=document.getElementById(x.getAttribute('name'));
+                         $("#mySelect").append("<option id='"+x.getAttribute('pk')+"' name='"+a.name+"'>"+a.name+"</option>");
+a.remove();
+x.remove();
+
+}
+</script>
+<script>
+
+function seleclick(s) {
+  var y = s[s.selectedIndex].id;
+  var n = s[s.selectedIndex].getAttribute('name');               
+  
+console.log(y);
+
+
+  
+    var con1="  <tr> <td> <fieldset class='rating' id='f"+y+"' name='"+n+"'><p>"+n+"&nbsp;</p> ";//concat +abz +</fieldset>
+    var con2="<input type='radio' class='rat' name='"+y+"' id='star10_"+y+"'  value='5'/><label class = 'full' for='star10_"+y+"'></label>";
+    var val=4.5;
+  for (var i =9; i>0; i--) {
+  if (i%2==0)//full
+     con2=con2+"<input type='radio' class='rat' name='"+y+"' id='star"+i+"_"+y+"'  value='"+val+"'/><label class = 'full' for='star"+i+"_"+y+"'></label>";
+  else//half
+     con2=con2+"<input type='radio' class='rat' name='"+y+"' id='starhalf"+i+"_"+y+"'  value='"+val+"' /><label class = 'half' for='starhalf"+i+"_"+y+"'></label>";
+val=val-.5;
+  }
+   $("#hi  tr:last").after(con1+con2+"</fieldset></td><td> <span class='glyphicon glyphicon-remove' id='"+y+"_' name='f"+y+"' pk='"+y+"' onclick='selectbox(this)' style='color: #D00909;'></span> </td></tr>");
+
+  document.getElementById(y).remove();
+
+}
+</script>
+  <script type="text/javascript">
+        document.getElementById("submit").onclick = function () {
+            
+ 
+     jsonObj = []
+
+      var z=document.getElementsByClassName("rat");
+             var ratingValue =0;
+  for (var i = 0; i < z.length; i++) {
+
+                if(z[i].checked == true) {
+                  ratingValue =z[i].value;
+
+                  } 
+
+ if(i<z.length-1){
+console.log(z[i+1].name+" :"+i);
+  if ( z[i].name!=z[i+1].name) {
+  item = {}
+        item ["cal"] = ratingValue;
+        item ["pk"] = z[i].name; 
+            jsonObj.push(item);
+        }
+    }
+    else
+    {
+        item = {}
+        item ["cal"] = ratingValue;
+        item ["pk"] = z[i].name; 
+            jsonObj.push(item);
+    }
+
+
+   } 
+
+
+var res = JSON.stringify(jsonObj);
+console.log(res);
+                 var trab = localStorage.getItem('pipa');
+
+var parametros={
+                "enla" : res,   
+                 "fkt" : trab
+
+    };
+
+  
+    $.ajax({
+    type: "POST",
+    url: 'calificar_p.php',
+    data: parametros ,  
+
+                    success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+                localStorage.setItem('pipa',0);
+alert(response);
+        alert("Trabajo calificado con exito!");
+      window.location="trabajos_generales_encargado.html";
+        
+                }
+});
+ 
+
+
+       
+
+
+
+};
+  </script>
+
+
+</body>
+</html>

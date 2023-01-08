@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bienvenido</title>
+  <style type="text/css">footer {
+  background-color: rgb(238, 238, 238);
+  position:fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  color: black;
+}
+hr2 { 
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 5em;
+    margin-right: 5em;
+    border-style: inset;
+    border-width: 2px;
+}
+      .center {
+    text-align: center;
+}
+button[value="hide"]{
+display:none;
+}
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+  <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet" />
+
+</head>
+<body background="https://www.beautycolorcode.com/8ed8e8.png">
+<div style="background:#eee;border:1px solid #ccc;padding:5px 10px;">
+<p style="text-align:center"><img alt="" src="https://cdn.discordapp.com/attachments/448707323125432320/499437628802727955/ohhh3.png" width="1184" height="118"></p>
+</div>
+
+<div style="background: rgb(238, 238, 238); border: 1px solid rgb(204, 204, 204); padding: 5px 10px; text-align: right;"><span style="font-family:verdana,geneva,sans-serif;">&nbsp;</span><span style="font-family:verdana,geneva,sans-serif;"> 
+<span style="font-size:20px;">&nbsp;</span></span><span style="font-family:tahoma,geneva,sans-serif;"><span style="font-size:20px;">   
+<span style="font-family:lucida sans unicode,lucida grande,sans-serif;">&nbsp; 
+</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;|&nbsp;
+<a href="http://ceover.com/inicio_de_sesion.php">Inicia sesi&oacute;n</a>&nbsp;&nbsp;|<a href="crear.php">&nbsp;Crea una cuenta</a>&nbsp;</span>
+</div>
+
+<footer>
+<p style="text-align: right;"><a href="https://img.youtube.com/vi/_ESprkRgmjU/mqdefault.jpg">Aviso legal</a>&nbsp;&nbsp;|<a href="https://img.youtube.com/vi/_ESprkRgmjU/mqdefault.jpg">&nbsp;Terminos y condiciones&nbsp;<br>
+<img alt="mail" src="http://iblogbox.github.io/js/htmleditor/ckeditor-4.4.7/plugins/smiley/images/envelope.png" title="mail" width="23" height="23"></a>ploisla8989@gmail.com</p>
+</footer>
+
+
+<p style="text-align: center;">&nbsp;</p>
+<div class="center">
+<p><span style="font-size:24px;"><b>&iexcl;Recuperaci&oacute;n de contrase&ntilde;a</b></span><b style="font-size: 24px;">!</b></p>
+<hr2></hr2>
+
+<p>&nbsp;</p>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+<form id="hola">
+
+Ingresa t&uacute; correo el&eacute;ctronico:&nbsp; &nbsp;&nbsp;<input id="field" name="field" required>
+    <div id='recaptcha' class="g-recaptcha"          data-sitekey="6LcFdHcUAAAAAGlqV725E4UtVmsdOM-ek9u-JPIv"
+          data-callback="onCompleted"
+          data-size="invisible">   
+</div>
+
+<br><p>
+<button class="btn btn-info" id="Enviar">Enviar</button>
+<a style="margin-left: 133px;" href="http://ceover.com/cambia_p.html" >Ingresa c&oacute;digo</a></p></form>  
+<script>
+
+     $('#hola').submit(function(event) {
+        console.log('validation completed.');
+
+        event.preventDefault(); //prevent form submit before captcha is completed
+        grecaptcha.execute( );
+    });
+
+    onCompleted = function() {
+        var a=document.getElementById('field');
+        res=a.value;
+        console.log("hola"+res);
+var parametros={
+                "mail" : res
+    };
+
+   $.ajax({
+      type: "POST",
+    url: 'reg_codigo.php',
+    data: parametros ,  
+
+                                      
+         }).done(function(response) {
+    alert(response);
+    });
+
+    }
+</script>
+
+</div>
+<p>&nbsp;</p>
+
+<p><hr2></hr2></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

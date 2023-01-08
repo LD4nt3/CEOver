@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bienvenido</title>
+  <style type="text/css">
+  @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+fieldset, label { margin: 0; padding: 0; }
+body{ margin: 20px; }
+h1 { font-size: 1.5em; margin: 10px; }
+
+/****** Style Star Rating Widget *****/
+
+
+footer {
+  background-color: rgb(238, 238, 238);
+  position:fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  color: black;
+}
+hr2 { 
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 5em;
+    margin-right: 5em;
+    border-style: inset;
+    border-width: 2px;
+}
+      .center {
+    text-align: center;
+}
+ 
+.fixed {
+ 
+ margin: -500px 10px 10px 599px; 
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto ;
+margin-left: 90px;
+margin-right: 90px;
+  padding: 0.1px;
+}
+.grid-item {
+
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+.centable {   margin: 25px 50px 75px 100px; }
+</style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script>
+  $(function() {
+
+      $.ajax({
+   url: 'red.php',
+   success: function (response) {//response is value returned from php (for your example it's "bye bye"
+    if(response==0){window.location = "http://ceover.com/home.html";}
+    console.log(response);
+   }
+}); 
+
+      
+  });
+  </script>
+<script type="text/javascript">
+  $( document ).ready(function() {
+
+    $.ajax({
+    url: 'agregar_punto_e.php'
+                                      
+         }).done(function(response) {
+         $("#mySelect").append(response);
+
+
+    });
+
+    $.ajax({
+    url: 'agregar_punto_ep.php'
+                                      
+         }).done(function(response) {
+         $("#mySelect2").append(response);
+
+
+    });
+});
+</script>
+
+
+</head>
+<body background="https://www.beautycolorcode.com/8ed8e8.png" style="cursor: auto;">
+<div style="background:#eee;border:1px solid #ccc;padding:5px 10px;">
+<p style="text-align:center"><img alt="" height="118" src="https://cdn.discordapp.com/attachments/448707323125432320/499437628802727955/ohhh3.png" width="1184" /></p>
+</div>
+
+<nav class='navbar navbar-inverse'>
+  <div class='container-fluid'>
+    <div class='navbar-header'>
+      <a class='navbar-brand' href='#'>Ceover</a>
+    </div>
+    <ul class='nav navbar-nav'>
+     
+  <li><a href='calificar.html' >  &nbsp;Regresar&nbsp;&nbsp;&nbsp;  </a></li>
+
+ <li><a href='salir.php' > &nbsp;Salir  </a></li>
+ 
+
+    </ul>
+
+  </div>
+</nav>
+<footer>
+<p style="text-align: right;"><a href="https://img.youtube.com/vi/_ESprkRgmjU/mqdefault.jpg">Aviso legal</a>&nbsp;&nbsp;|<a href="https://img.youtube.com/vi/_ESprkRgmjU/mqdefault.jpg">&nbsp;Terminos y condiciones&nbsp;<br />
+<img alt="mail" height="23" src="http://iblogbox.github.io/js/htmleditor/ckeditor-4.4.7/plugins/smiley/images/envelope.png" title="mail" width="23" /></a>ploisla8989@gmail.com</p>
+</footer>
+
+<p style="text-align: center;"><span style="font-size:24px;"><b>&iexcl;Califica el&nbsp;trabajo!&nbsp;</b></span></p>
+<hr2></hr2>
+
+<form  action="" id="hi">
+
+<div class="grid-container">
+<div class="grid-item">
+  <p><h2>Nombre del punto</h2> </p>
+  <input type="text" id="pto" required >
+
+ <p><h2> Selecione un procedimieto:</h2> </p>
+<select  id="mySelect" required>
+  </select>
+  <br><br>
+
+  <p>&iexcl;O agregue otro procedimiento! </p>
+  <button id="myButton"> Agregar procedimiento nuevo </button>
+    <br><br>
+
+  <p style="text-align: center;"><button id="submit"> Crear </button>
+</p>
+
+</div>
+
+<div class="grid-item">
+<p><h2> Selecione un punto a editar o eliminar:</h2> </p>
+<select  id="mySelect2" required>
+  </select>
+  <br><br>
+  <p style="text-align: center;">  <button id="myButton2"> Editar </button>
+      <p style="text-align: center;">  <button id="myButton3"> Eliminar </button>
+
+ </p> </div>
+</div>
+
+
+
+<p>&nbsp;</p>
+<div id="resul">
+  </div>    
+</form>
+
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "agregar_pro.html";
+    };
+</script>
+
+
+  <script type="text/javascript">
+      document.getElementById("submit").onclick = function () {
+          
+      var res = document.getElementById("pto").value;
+     var s= document.getElementById("mySelect");
+  var fk = s[s.selectedIndex].id;
+var parametros={
+                "pno" : res,
+                 "pro" : fk
+
+    };
+
+  
+    $.ajax({
+    type: "POST",
+    url: 'agregar_punto_p.php',
+    data: parametros ,  
+
+                    success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+                    alert(response);
+                }
+};//alert("se agrego con exito");
+   
+
+
+});
+  </script>
+<script type="text/javascript">
+ document.getElementById("myButton2").onclick = function () {
+
+  var s= document.getElementById("mySelect2");
+  var dat = s[s.selectedIndex].getAttribute('name');
+  var pk = s[s.selectedIndex].id;
+
+    localStorage.setItem("punto", dat);
+        localStorage.setItem("ppk", pk);
+//``alert(pk);
+        location.href = "editar_punto.html";
+
+        }
+  </script>
+<script type="text/javascript">
+ document.getElementById("myButton3").onclick = function () {
+
+  var s= document.getElementById("mySelect2");
+  var pk = s[s.selectedIndex].id;
+alert(pk);
+var parametros={
+                "id" : pk
+
+    };
+
+  
+    $.ajax({
+    type: "POST",
+    url: 'eliminar_punto.php',
+    data: parametros ,  
+
+                    success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+                    alert("Eliminado con exito");
+  }
+}); 
+        }
+  </script>
+</body>
+</html>

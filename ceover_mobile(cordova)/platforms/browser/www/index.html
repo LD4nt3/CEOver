@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>inicia sesion</title>
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+        
+    }
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        // Now safe to use device APIs
+
+            var notificationOpenedCallback = function(jsonData) {
+    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+  };
+
+  window.plugins.OneSignal
+    .startInit("327cf059-eb1c-4c13-8396-08802607f832")
+    .handleNotificationOpened(notificationOpenedCallback)
+    .endInit();
+    }
+
+    </script>
+        <style type="text/css">.custom_footer {
+                background-color: rgb(238, 238, 238);
+                position:fixed;
+                bottom: 0;
+                width: 100%;
+                height: 40px;
+                color: black;
+             
+            }
+        </style> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" /><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    </head>
+    <body  style="background: #BCD4E5" onload="onLoad()">
+        <div style="background: #7ECADB;border:1px solid #ccc;padding:5px 10px;">&nbsp;<a href="index.html">
+                <p style="text-align:center"></p></a>
+        </div>
+
+        <div class="container">
+
+
+
+            <div align="center"><h2><b>Inicio de sesion</b></h2></div>
+            <div class="panel-body"><span><!--?php echo $message; ?--></span>
+
+                <form action="" id="hi">
+                    <div class="form-group">
+                        <label>Correo Eleonico</label>
+                        <input type="text" id="correo" class="form-control" required="required"  />
+                    </div>
+                    <div class="form-group">
+                        <label>Contrase&ntildea</label>
+                        <input type="password"  id="pass" class="form-control" required="required" />
+                    </div>
+                    <div  id="wuard">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="login" id="login" class="btn btn-info" value="Login" />
+                    </div>
+                </form>
+            </div>
+
+            &nbsp;&nbsp;</div>
+
+        <p>&nbsp;</p>
+
+
+
+        <script>
+            $(document).ready(function () {
+                $("#hi").submit(function () {
+
+                    var mail = document.getElementById("correo").value;
+                    var pas = document.getElementById("pass").value;
+
+                    var parametros = {
+                        "contra": pas,
+                        "correo": mail
+                    };
+                    event.preventDefault();
+
+                    $.ajax({
+                        type: "POST",
+                        url: 'http://ceover.com/login1.php',
+                        data: parametros
+
+                    }).done(function (response) {
+
+                        if (response != 0) {
+
+                             $("#apendice").append(response);
+                          //  window.location = 'perfilAdmin.html';
+
+                            
+                        } else {
+                            $("#wuard").html('<div class="alert alert-danger">Error: password o correo incorrecto(s)</div>');
+                        }
+        //  alert("aaaaaaaaaaaa");
+                        return false;
+
+                    }).fail(function () {
+                        $("#wuard").html('<div class="alert alert-danger">Error</div>');
+                    });
+
+                });
+            });
+        </script>
+        <br> <br> <br> <br> <br> <br> <br> 
+<footer>
+<p style="text-align: right;"><a href="https://img.youtube.com/vi/_ESprkRgmjU/mqdefault.jpg">Aviso legal</a>&nbsp;&nbsp;|<a href="https://img.youtube.com/vi/_ESprkRgmjU/mqdefault.jpg">&nbsp;Terminos y condiciones&nbsp;<br />
+<img alt="mail" height="23" src="http://iblogbox.github.io/js/htmleditor/ckeditor-4.4.7/plugins/smiley/images/envelope.png" title="mail" width="23" /></a>ploisla8989@gmail.com</p>
+</footer>
+        <script type="text/javascript" src="js/index.js"></script>
+<div id='apendice'></div>
+    </body>
+</html>

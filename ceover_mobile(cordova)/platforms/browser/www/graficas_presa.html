@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+ <meta http-equiv="Content-Security-Policy" content="default-src data: gap: *; style-src 'self' https://*.googleapis.com https://*.google.com 'unsafe-inline'; script-src 'self' https://*.googleapis.com https://*.google.com 'unsafe-inline' 'unsafe-eval';frame-src *">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" /><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title>Bienvenido</title>
+  <style type="text/css">.custom_footer {
+                background-color: rgb(238, 238, 238);
+                position:sticky;
+                bottom: 0;
+                width: 100%;
+                height: 40px;
+                color: black;
+                
+           
+             
+            }
+.img-fluid{
+  max-width: 100%;
+  height: auto;
+}
+div.e {
+  background-color: lightblue;
+ 
+  height: 200%;
+  overflow: hidden;
+}
+      .center {
+    text-align: center;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+margin-left: 90px;
+margin-right: 90px;
+
+}
+.grid-item {
+
+  font-size: 20px;
+
+}
+hr2 { 
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 5em;
+    margin-right: 5em;
+    border-style: inset;
+    border-width: 2px;
+}
+      .center {
+    text-align: center;
+}
+* {
+  margin:0;
+  padding:0;
+}
+
+
+
+header {
+  width:100%;
+}
+
+header nav {
+  width:100%;
+  max-width:200px;
+ opacity: 0.94;
+  filter: alpha(opacity=100);
+  background:#4E576B;
+}
+
+
+.menu_bar {
+  display:none;
+
+}
+
+header nav ul {
+  overflow:hidden;
+  list-style:none;
+
+}
+
+header nav ul li {
+  float:left;
+
+}
+
+header nav ul li a {
+  color:#fff;
+  padding:20px;
+  display:block;
+  text-decoration:none;
+
+}
+
+header nav ul li span {
+  margin-right:10px;
+  opacity: 0.5;
+}
+
+header nav ul li a:hover {
+  background:#6E7178;
+
+   
+
+}
+
+section {
+  padding:20px;
+}
+
+@media screen and (max-width:800px ) {
+  header nav {
+    width:80%;
+  
+    left:-100%;
+    margin:0;
+    position: absolute;
+  }
+
+  header nav ul li {
+    display:block;
+    float:none;
+    border-bottom:1px solid rgba(255,255,255, .3);
+  }
+
+  .menu_bar {
+    display:block;
+    width:100%;
+    background:#4E576B;
+
+
+  }
+
+  .menu_bar .bt-menu {
+    display:block;
+    padding:10px;
+    background:#4E576B;
+    color:#fff;
+    text-decoration:none;
+    font-weight: bold;
+    font-size:25px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+  }
+
+  .menu_bar span {
+    opacity: 0.5;
+    float:right;
+    font-size:30px;
+  }
+}
+button[value="hide"]{
+display:none;
+}
+  </style>
+  <script type="text/javascript">
+
+     $(document).ready(main);
+ 
+var contador = 1;
+ 
+function main(){
+  $('.menu_bar').click(function(){
+    // $('nav').toggle(); 
+ 
+    if(contador === 1){
+      $('nav').animate({
+        left: '0'
+      });
+      contador = 0;
+    } else {
+      contador = 1;
+      $('nav').animate({
+        left: '-100%'
+      });
+    }
+ 
+  });
+ 
+};</script>
+     
+ 
+  
+</head>
+<body background="https://www.beautycolorcode.com/8ed8e8.png" style="cursor: auto;">
+<img src="https://cdn.discordapp.com/attachments/448707323125432320/499437628802727955/ohhh3.png" class="img-fluid" alt="Responsive image">
+<div class="e">
+<header>
+  <script>
+      /*$(function() {
+      $.ajax({
+   url: 'http://ceover.com/m.php',
+   success: function (response) {//response is value returned from php (for your example it's "bye bye"
+$("#resul2").html(response);
+}
+});
+        });*/ 
+  </script>
+      <div class='menu_bar'>
+      <a href='#' class='bt-menu'><span class='icon-list2'></span>Menu</a>
+    </div>
+
+    <nav>
+      <ul>
+              <li><a href='#'>Perfil</a></li>
+     
+      <li><a href='#'>Trabajos</a></li>
+      <li><a href='#'>Tabla de puntuaciones</a></li>
+      <li><a href='#'>Departamento</a></li>
+      <li><a href='#'>Historial</a></li>
+      <li><a href='graficas_presa.html'>Graficas</a></li>
+      <li><a href='#'>Mensajes</a></li>
+      
+      <li><a href='#'>Salir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+
+
+
+  <script>
+
+      $.ajax({
+   url: 'http://ceover.com/graficas_presa.php',
+   success: function (response) {//response is value returned from php (for your example it's "bye bye"
+    $("#resul").html(response);
+   }
+});
+
+      $.ajax({
+   url: 'http://ceover.com/graficas_presa2m.php',
+   success: function (response) {//response is value returned from php (for your example it's "bye bye"
+    $("#resul2").html(response);
+   }
+});
+
+  </script>
+
+  <script type="text/javascript">
+function myFuncion(elemento) {
+
+  var item = elemento;
+
+
+
+      var parametros={
+                "item1" : item
+
+    };
+   
+    $.ajax({
+    type: "POST",
+    url: 'http://ceover.com/unir2.php',
+    data: parametros ,  
+
+                    success:  function (response) { 
+                      window.location.replace("graficas.html");
+                }
+});
+
+
+
+   }
+
+</script>
+<div id="resul"></div>
+<div id="resul2"></div>
+<p>&nbsp;</p>
+<footer>
+<p style="text-align: right;"><a href="https://img.youtube.com/vi/_ESprkRgmjU/mqdefault.jpg">Aviso legal</a>&nbsp;&nbsp;|<a href="https://img.youtube.com/vi/_ESprkRgmjU/mqdefault.jpg">&nbsp;Terminos y condiciones&nbsp;<br />
+<img alt="mail" height="23" src="http://iblogbox.github.io/js/htmleditor/ckeditor-4.4.7/plugins/smiley/images/envelope.png" title="mail" width="23" /></a>ploisla8989@gmail.com</p>
+</footer>
+</div>
+</body>
+</html>
