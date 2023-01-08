@@ -1,7 +1,12 @@
 # CEOver
-Sistema web Organizador/Planificador Empresarial (2018) y versión móvil (apache cordova).
+Sistema web Organizador/Planificador Empresarial (2018) y versión móvil(apache cordova).
+Desarrollado en php con Javascript Jquery y css con notificaciones push basadas en OneSignal.
+(requiere PHPMAILER 6.0.5 usada)
 
 Web based Business Organizer/Planner System (2018) and mobile version (apache cordova).
+Developed in php with Javascript Jquery and css with push notifications based on OneSignal.
+(requires PHPMAILER 6.0.5 used)
+
 
 <img
   src="Images from system/index.png"
