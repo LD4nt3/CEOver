@@ -27,8 +27,14 @@ Web based Business Organizer/Planner System (2018) and mobile(apache cordova).
   alt="Alt 4"
   title="home"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
+    
+  <img
+  src="Images from system/navigation_map.png"
+  alt="Alt"
+  title="home"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
   
-    <img
+  <img
   src="Images from system/trabajo_template.png"
   alt="Alt 5"
   title="home"
