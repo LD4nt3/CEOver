@@ -5,7 +5,7 @@ Desarrollado en php con Javascript Jquery y css con notificaciones push basadas 
 
 Web based Business Organizer/Planner System (2018) and mobile version (apache cordova).
 Developed in php with Javascript Jquery and css with push notifications based on OneSignal.
-(requires PHPMAILER 6.0.5 used)
+(requires PHPMAILER: 6.0.5 used)
 
 
 <img
